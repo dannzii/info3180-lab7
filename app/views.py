@@ -30,20 +30,7 @@ def upload():
             print e
             return jsonify(errors=["internal Error"])
     return jsonify(errors=form_errors(myForm))
-           
-def form_errors(form):
-    error_messages = []
-    """Collects form errors"""
-    for field, errors in form.errors.items():
-        for error in errors:
-            message = u"Error in the %s field - %s" % (
-                    getattr(form, field).label.text,
-                    error
-                )
-            error_messages.append(message)
-
-    return error_messages         
-            
+    
 
 # Please create all new routes and view functions above this route.
 # This route is now our catch all route for our VueJS single page
